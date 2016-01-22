@@ -1,0 +1,22 @@
+---
+layout: page
+title: Posts
+permalink: /posts
+---
+
+<h1 class="page-heading">Posts</h1>
+
+<ul class="post-list">
+	{% for post in site.posts %}
+	<li>
+		<span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+		<h2>
+			<!-- // Link changed from vanilla jekyll for recirecting straight to the post content positioning (via the '#anchor-content' addition below, JS animation switched off and not performed in this specific case) -->
+			<a class="post-link" href="{{ post.url | prepend: site.baseurl }}#anchor-content">{{ post.title }}</a>
+		</h2>
+	</li>
+	{% endfor %}
+</ul>
+
+<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
